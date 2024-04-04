@@ -1,0 +1,65 @@
+/* Style pour les éléments ayant la classe 'dipense-item' */
+.depense-item {
+    display: flex; /* Affichage en tant que conteneur flex */
+    justify-content: space-between; /* Espace entre les enfants, les poussant aux extrémités */
+    align-items: center; /* Alignement vertical des enfants */
+    box-shadow: 0 2px 8px black; /* Ombre portée */
+    padding: 0.5rem; /* Marge intérieure */
+    margin: 1rem 0; /* Marge extérieure */
+    border-radius: 12px; /* Rayon des coins */
+    background-color: #c0e7e7; /* Couleur de fond */
+}
+
+/* Style pour les éléments ayant la classe 'depense-item__description' */
+.depense-item__description {
+    display: flex; /* Affichage en tant que conteneur flex */
+    flex-direction: column; /* Direction des enfants arrangés en colonne */
+    gap: 1rem; /* Espace entre les enfants */
+    align-items: flex-end; /* Alignement des enfants à droite */
+    flex-flow: column-reverse; /* Direction des enfants inversée */
+    justify-content: flex-start; /* Alignement vertical en haut */
+    flex: 1; /* Flexibilité de l'élément */
+}
+
+/* Style pour les balises h2 à l'intérieur des éléments ayant la classe 'depense-item' */
+.depense-item h2 {
+    color: blue; /* Couleur du texte */
+    font-size: 1rem; /* Taille de police */
+    flex: 1; /* Flexibilité de l'élément */
+    margin: 0 1rem; /* Marge extérieure */
+    color: white; /* Couleur du texte */
+}
+
+/* Style pour les éléments ayant la classe 'depense-item__price' */
+.depense-item__price {
+    font-size: 1rem; /* Taille de police */
+    font-weight: bold; /* Poids de la police */
+    color: white; /* Couleur du texte */
+    background-color: purple; /* Couleur de fond */
+    border: 1px solid white; /* Bordure */
+    padding: 0.5rem; /* Marge intérieure */
+    border-radius: 12px; /* Rayon des coins */
+}
+
+/* Media query pour les écrans ayant une largeur minimale de 580px */
+@media(min-width: 580px) {
+    /* Style spécifique pour les éléments ayant la classe 'depense-item__description' à l'intérieur de la media query */
+    .depense-item__description {
+        flex-direction: row; /* Direction des enfants arrangés en ligne */
+        align-items: center; /* Alignement vertical au centre */
+        justify-content: flex-start; /* Alignement horizontal à gauche */
+        flex: 1; /* Flexibilité de l'élément */
+    }
+
+    /* Style spécifique pour les balises h2 à l'intérieur des éléments ayant la classe 'depense-item' à l'intérieur de la media query */
+    .depense-item__description h2 {
+        font-size: 1.25rem; /* Taille de police */
+    }
+
+    /* Style spécifique pour les éléments ayant la classe 'depense-item__price' à l'intérieur de la media query */
+    .depense-item__price {
+        font-size: 1.25rem; /* Taille de police */
+        padding: 0.5rem 1.5rem; /* Marge intérieure */
+       
+    }
+}
