@@ -16,7 +16,7 @@ const totalMaximum = Math.max(...dataPointValues)
           label={dataPoint.label}
         />
       ))}
-      //creer tableau de point graphiques
+      {/* creer tableau de point graphiques */}
     </div>
   );
 };

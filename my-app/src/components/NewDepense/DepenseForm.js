@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import "./DepenseForm.css";
+// import DepensesServices from "../services/depensesServices";
 
 const DepenseForm = (props) => {
-  const [enteredTitle, setenteredTitle] = useState(""); //declarer usestate par composant!
-  const [enteredAmount, setenteredAmount] = useState("");
-  const [enteredDate, setenteredDate] = useState("");
 
-  // const [userInput, setuserInput] = useState({   //desclarer un seul useState puor t les components 
+const currentDate= new Date().toISOString().split('T')[0];
+
+//option 1 : declarer usestate par élément!  
+const [enteredTitle, setenteredTitle] = useState(""); 
+  const [enteredAmount, setenteredAmount] = useState("");
+  const [enteredDate, setenteredDate] = useState(currentDate);
+
+  //option 2 : déclarer un seul useState pour ts les éléments
+  // const [userInput, setuserInput] = useState({
   //   enteredTitle: "",
   //   enteredAmount: "",
-  //   enteredDate: "",
+  //   enteredDate: ""
   // });
 
-  const titleChangeHandler = (event) => {  //creer l'evenement 
+  const titleChangeHandler = (event) => {
+    //creer l'evenement
     setenteredTitle(event.target.value);
 
     // setuserInput({
@@ -44,7 +51,7 @@ const DepenseForm = (props) => {
   };
 
   const dateChangeHandler = (event) => {
-     setenteredDate(event.target.value);
+    setenteredDate(event.target.value);
 
     //  setuserInput({
     //   enteredDate : event.target.value,
@@ -60,8 +67,14 @@ const DepenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault(); //preventDefault: empeche le comportement par defaut du form
 
-    
-    const DepenseData = {  //creer un objet DepenseData
+    // let newDepense ={title, amount, date};
+
+    // (newDepense).then(resp =>{
+    //   alert(JSON.stringify(resp.data));
+    // });
+
+    const DepenseData = {
+      //creer un objet DepenseData
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
@@ -72,6 +85,10 @@ const DepenseForm = (props) => {
     setenteredAmount("");
     setenteredDate("");
   };
+
+
+
+  
 
   return (
     <form onSubmit={submitHandler}>
